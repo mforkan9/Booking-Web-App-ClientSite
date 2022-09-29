@@ -1,0 +1,31 @@
+.banner{
+    background: linear-gradient(rgba(255, 203, 5, 0.9), rgba(255, 203, 5, 0.9)), url(./banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 55%;
+    padding: 90px;
+    color: #0d0d0d;
+    font-family: serif;
+
+    h3{
+        font-weight: 700;
+    }
+
+    .icon{
+       
+        i{
+            font-size: 40px;
+            padding-top: 21px;
+            height: 90px;
+            width: 90px;
+            color: #0d0d0d;
+            border: 1px dashed #0d0d0d;
+            border-radius: 100%;
+            margin-bottom: 15px;
+        }
+    }
+
+    i:hover{
+        background-color: #0d0d0d;
+        color:#ffcb05 ;
+    }
+}

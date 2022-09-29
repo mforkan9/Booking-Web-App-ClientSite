@@ -1,0 +1,81 @@
+.room-details-page{
+
+    .room-details-header{
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.55)), to(rgba(0, 0, 0, 0.55))), url('../images/room-details-cover.jpg') 0% 33%;
+	background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('./room-details-cover.jpg') 0% 33%;
+	background-size: 150%;
+    height: 400px;
+
+    .title{
+        margin-top: 150px;
+        color: #fff;
+        font-family: serif;
+
+        h1{
+            font-size: 4rem;
+            font-weight: 500;
+        }
+    }
+    }
+
+    .room-facilities{
+        text-align: center;
+        background-color: #f2f3f3;
+        padding: 50px 50px 10px;
+
+        .facility-block{
+            span{
+                text-align: center;
+                background-color: #fff;
+                padding: 20px 20px;
+                border-radius: 10px;
+                
+            }
+            p{
+                text-align: center;
+                margin-top: 25px;
+                font-size: 13px;
+
+            }
+        }
+    }
+
+    .room-description{
+        font-family: serif;
+        color:#0d0d0d ;
+        h2{
+            font-weight: 600;
+        }
+    }
+
+    .contact-block{
+        background-color: #f2f3f3;
+        padding: 40px 30px;
+        color: #0d0d0d;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        p{
+            font-size: 1.5vh;
+        }
+    }
+    .special-offer-block{
+        background: linear-gradient(rgba(255, 203, 5, 0.8), rgba(255, 203, 5, 0.8)), url(./room-details-cover.jpg);
+        background-position: 15% 50%;
+        background-size: cover;
+        padding: 28px 23px 55px;
+        text-align: center;
+        color: #fff;
+        font-family: serif;
+
+        .circle{
+            background: #0d0d0d;
+            margin: auto;
+            border-radius:100% ;
+            padding: 50px 0px;
+            height: 180px;
+           width: 180px;
+           margin-bottom: 50px;
+           margin-top: 20px;
+        }
+    }
+}
+

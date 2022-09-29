@@ -1,10 +1,134 @@
 import React from 'react';
+import Banner from '../MainHomeItem/Banner/Banner';
+import Header from '../MainHomeItem/Header/Header';
 import NavHeader from '../MainHomeItem/NavHeader/NavHeader';
+import RoomBanner from '../MainHomeItem/RoomBanner/RoomBanner';
+
 
 const Home = () => {
     return (
         <div>
             <NavHeader></NavHeader>
+            <Header></Header>
+            <Banner></Banner>
+            <RoomBanner></RoomBanner>
+            <div>
+                lfslkdmflksdf
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
+            <div>
+                dflsdkjflskdjflksd
+            </div>
         </div>
     );
 };

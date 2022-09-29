@@ -1,0 +1,37 @@
+.navStyle{
+
+    .logo{
+        font-size: 36px;
+        font-weight: 700;
+        line-height: inherit;
+        white-space: nowrap;
+        color: white;
+
+        span{
+            color: #ffcb05;
+        }
+    }
+
+    .listStyle{
+      
+        ul{
+            li{
+                margin: 13px;
+                a{
+                    color: white;
+                    font-size: 20px;
+                    font-weight: 300;
+
+                    i{
+                        font-size: 16px;
+                    }
+
+                }
+                a:hover{
+                    color: #ffcb05;
+                }
+            }
+        }
+    }
+    
+}

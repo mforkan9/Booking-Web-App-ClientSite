@@ -1,0 +1,39 @@
+.header{
+    position: relative;
+    .topleft {
+        position: absolute;
+        top: 0px;
+        z-index: 2;
+        color: white;
+        width: 100%;
+      }
+      .welcome-section{
+        position: absolute;
+        top: 200px;
+        z-index: 1;
+        color: white;
+        width: 100%;
+
+        .latter{
+          h1{
+            font-size: 50px;
+            font-weight: 700;
+          }
+
+          span{
+            color:#ffcb05;
+          }
+        }
+      }
+
+     .header-border{
+        height: 700px;
+        .img1{
+            height: 700px;
+            width: 100%;
+            filter: brightness(0.5);
+            
+        }
+
+     }
+}

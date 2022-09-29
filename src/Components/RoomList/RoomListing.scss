@@ -1,0 +1,61 @@
+.room-list-page {
+
+    .room-list-header {
+        // background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.55)), to(rgba(0, 0, 0, 0.55))), url('../images/room-listing-cover.jpg') 25% 77%;
+        // background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('./room-grid-cover.jpg') 25% 77%;
+        // background-size: 185%;
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.55)), to(rgba(0, 0, 0, 0.55))), url('../images/room-grid-cover.jpg') 50% 63%;
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('./room-grid-cover.jpg') 50% 63%;
+        background-size: 130%;
+        height: 400px;
+
+        .title {
+            margin-top: 150px;
+            color: #fff;
+            font-family: serif;
+
+            h1 {
+                font-size: 4rem;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.roomListing {
+    max-height: 700px;
+    overflow: hidden;
+
+    .roomListCard {
+
+        .roomBody {
+            position: relative;
+
+            img {
+                width: 100%;
+                border-radius: 0px;
+            }
+
+            .room-overlay {
+                font-family: serif;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 20px 25px;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.8) 100%);
+
+                h2 {
+                    opacity: 1;
+                    color: #fff;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .title {
+            font-size: 20px;
+            color: #0d0d0d;
+        }
+    }
+}

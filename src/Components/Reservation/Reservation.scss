@@ -1,0 +1,62 @@
+.room-reserve-header {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.55)), to(rgba(0, 0, 0, 0.55))), url('./reservation-cover.jpg') 33% 40%;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('./reservation-cover.jpg') 33% 40%;
+    background-size: cover;
+    height: 400px;
+
+    .title {
+        margin-top: 150px;
+        color: #fff;
+        font-family: serif;
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.reservation-block{
+    font-family: serif;
+
+    .reservation-form{
+    
+        .form-group{
+            position: relative;
+            margin-bottom: 20px;
+        }
+        input{
+            font-size: 19px;
+            height: 53px;
+            border: 1px solid #a7a9ac;
+            padding-left: 15px;
+           z-index: 1;
+        }
+        textarea{
+            font-size: 19px;
+            padding: 15px;
+            border: 1px solid #a7a9ac;
+        }
+
+        i{
+            position: absolute;
+            top: 19px;
+            font-size: 19px;
+            display: inline-block;
+            right: 15px;
+            color: #ffcb05;
+            text-align: center;
+        }
+        .selectedArea{
+            font-size: 19px;
+            height: 53px;
+            border: 1px solid #a7a9ac;
+            padding-left: 15px;
+           z-index: 1;
+           width: 100%;
+           max-height: 30px;
+           overflow: hidden;
+
+        }
+    }
+}
