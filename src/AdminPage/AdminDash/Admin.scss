@@ -4,13 +4,22 @@
     background-color: #fff;
     padding: 6px 14px;
    // border-right: 1px solid rgb(200, 250, 205);
-    border-right: 1px solid #e3c75a;
+    //border-right: 1px solid #e3c75a;
     color: black;
     font-family: serif;
+
+
     
-    .make-me-sticky {
-        position: sticky;
+    .sticky {
+        position: -webkit-sticky;
+        position: sticky !important;
         top: 0;
+        right: 0;
+        left: 0;
+        padding: 0;
+        background-color: #fff;
+        border-right:1px solid #e3c75a;
+
     }
 
     h3{
@@ -84,3 +93,19 @@
         }
     }
 }
+
+
+.stick{
+   position: -webkit-sticky !important;
+    position: sticky !important;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    //box-shadow: none;
+   background-color: white;
+   
+}
+
+
+

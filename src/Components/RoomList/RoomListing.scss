@@ -24,7 +24,8 @@
 
 .roomListing {
     max-height: 700px;
-    overflow: hidden;
+    overflow-y: scroll;
+  
 
     .roomListCard {
 
@@ -32,6 +33,7 @@
             position: relative;
 
             img {
+                height: 250px;
                 width: 100%;
                 border-radius: 0px;
             }
@@ -59,3 +61,22 @@
         }
     }
 }
+
+.roomListing::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  /* Track */
+ .roomListing::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  .roomListing::-webkit-scrollbar-thumb {
+    background: rgb(209, 198, 198);
+  }
+  
+  /* Handle on hover */
+ .roomListing::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

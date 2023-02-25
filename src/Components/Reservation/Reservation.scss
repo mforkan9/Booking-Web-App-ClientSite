@@ -16,29 +16,50 @@
     }
 }
 
-.reservation-block{
+.reservation-block {
     font-family: serif;
 
-    .reservation-form{
-    
-        .form-group{
+    .reservation-form {
+
+        .form-group {
             position: relative;
             margin-bottom: 20px;
         }
-        input{
+
+        input {
             font-size: 19px;
             height: 53px;
             border: 1px solid #a7a9ac;
             padding-left: 15px;
-           z-index: 1;
+            z-index: 1;
         }
-        textarea{
+
+        input[type="date"]::before {
+            color: #686565;
+            content: attr(placeholder);
+        }
+
+        input[type="date"] {
+           color: #ffffff;
+        }
+
+        input[type="date"]:focus,
+        input[type="date"]:valid {
+            color: #666666;
+        }
+
+        input[type="date"]:focus::before,
+        input[type="date"]:valid::before {
+            content: "" !important;
+        }
+     
+        textarea {
             font-size: 19px;
             padding: 15px;
             border: 1px solid #a7a9ac;
         }
 
-        i{
+        i {
             position: absolute;
             top: 19px;
             font-size: 19px;
@@ -47,15 +68,16 @@
             color: #ffcb05;
             text-align: center;
         }
-        .selectedArea{
+
+        .selectedArea {
             font-size: 19px;
             height: 53px;
             border: 1px solid #a7a9ac;
             padding-left: 15px;
-           z-index: 1;
-           width: 100%;
-           max-height: 30px;
-           overflow: hidden;
+            z-index: 1;
+            width: 100%;
+            max-height: 30px;
+            overflow: hidden;
 
         }
     }

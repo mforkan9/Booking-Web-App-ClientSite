@@ -1,7 +1,9 @@
 import { Pagination } from '@mui/material';
 import React from 'react';
+import { useCallback } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import './RoomList.scss'
 
 const RoomList = () => {
@@ -19,6 +21,7 @@ const RoomList = () => {
         fetch(`http://localhost:8000/api/v1/room/createRoom?page=${activePage}&limit=${dataLimit}&&filter=${filterData}`)
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 setAllData(data.data)
                 setTotalData(data.totalData)
                 const pageNumber = data.totalData
@@ -32,6 +35,7 @@ const RoomList = () => {
         setActivePage(value)
     }
 
+
     const handleDelete = async (id) => {
         const procced = window.confirm('Are You Sure Delete this Item')
         if (procced) {
@@ -44,14 +48,15 @@ const RoomList = () => {
                 setTimeout(() => {
                     setDeletedSuccess(false)
                 }, 1000);
-                console.log(result.ok);
             } catch (error) {
                 console.log(error);
             }
         }
     }
 
-    console.log(deletedSuccess)
+    const navigate = useNavigate();
+   const handleOnClick  = useCallback((id) => navigate(`/adminDashboard/roomList/roomOverview/${id}`, {replace: true}), [navigate])
+
 
 
     return (
@@ -80,9 +85,9 @@ const RoomList = () => {
                 </div>
 
                 <div className='table-responsive mb-3' >
-                    <table class="table align-middle mb-4 my-4 bg-white">
+                    <table class="table align-middle mb-4 my-4 bg-white table-hover">
                         <thead class="bg-light">
-                            <tr>
+                            <tr className='text-center'>
                                 <th>Img</th>
                                 <th>#</th>
                                 <th>Type</th>
@@ -100,8 +105,8 @@ const RoomList = () => {
                                 allData.map(item =>
 
 
-                                    <tr>
-                                        <td>
+                                    <tr className='text-center'>
+                                        <td onClick={() => handleOnClick(item._id)} role={'button'}>
                                             <div class="d-flex align-items-center">
                                                 <img
                                                     src={item.roomImage}
@@ -114,19 +119,19 @@ const RoomList = () => {
                                         <td>
                                             {item.roomNumber}
                                         </td>
-                                        <td>{item.roomType}</td>
+                                        <td className={filterData ? 'text-primary' : ''}>{item.roomType}</td>
                                         <td>{item.roomFeature}</td>
                                         <td>{item.roomMeal}</td>
                                         <td>{item.roomBedCapacity}</td>
-                                        <td>
-                                            <span class="badge badge-success rounded-pill d-inline">Active</span>
+                                        <td className='fs-6'>
+                                            <span className={`badge ${item.status === 'Active' ? 'badge-success': 'text-bg-danger'} rounded-pill d-inline`}>{item.status}</span>
                                         </td>
 
                                         <td>{item.roomCancelCharge}</td>
                                         <td>$ {item.ratePerNight}</td>
                                         <td>
                                             <div className='d-flex' >
-                                                <i class="bi bi-pencil-square  fs-5 mx-2 text-primary" role={'button'}></i>
+                                               <Link to={`/adminDashboard/roomEdit/${item._id}`}><i class="bi bi-pencil-square z-3 fs-5 mx-2 text-primary" role={'button'}></i></Link> 
                                                 <i class="bi bi-trash3 fs-5 text-danger" onClick={() => handleDelete(item._id)} role={'button'}></i>
                                             </div>
                                         </td>

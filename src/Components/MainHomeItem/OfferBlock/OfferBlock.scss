@@ -1,0 +1,43 @@
+.offer{
+    margin-top: 100px;
+.offerblock{
+    background: black;
+    border-radius: 5px;
+    .content{
+        text-align: center;
+        color: #ffffff;
+        padding: 50px 40px;
+
+        span{
+            font-weight: 500;
+            font-size: 20px;
+        }
+        h2{
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 40px;
+            letter-spacing: .03em;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+            padding-top: 13px;
+            color: #ffcb05;
+        }
+        p{
+            font-weight: 500;
+            font-size: 20px;
+        }
+    }
+
+
+    .offer-img{
+        height: 300px;
+        width: 200px;
+        img{
+            border-top-left-radius:100px ;
+            border-bottom-left-radius:100px ;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+}

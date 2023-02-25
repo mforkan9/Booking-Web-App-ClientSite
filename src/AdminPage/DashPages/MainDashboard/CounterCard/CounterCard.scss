@@ -1,0 +1,27 @@
+.counter-card{
+    font-family: serif;
+    .card{
+        padding: 10px;
+        border-radius: 1.375rem;
+        box-shadow: 0rem 0.3125rem 0.3125rem 0rem rgba(82, 63, 105, 0.05);;
+        color: white;
+
+        span{
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+    .gradiant-1{
+        background: linear-gradient(45deg, #59bcff 21%, #59d7ff 100%);;
+    }
+    .gradiant-2{
+        background: linear-gradient(45deg, #4ad994 0%, #57f998 100%);;
+    }
+    .gradiant-3{
+        background: linear-gradient(45deg, #fdb765 0%, #ffe485 100%);;
+        //background: linear-gradient(45deg, #135846 0%, #a1d4c6 100%);;
+    }
+    .gradiant-4{
+        background: linear-gradient(45deg, #ff6d59 0%, #ffd584 100%);;
+    }
+}

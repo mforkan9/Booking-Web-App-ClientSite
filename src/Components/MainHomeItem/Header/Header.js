@@ -6,9 +6,11 @@ import img3 from './leisure-beautiful-health-garden-landscape.jpg'
 import Navbar from '../Navbar/Navbar';
 import HeaderDatePicker from '../HeaderDatePicker/HeaderDatePicker';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade} from 'swiper';
+import { Autoplay, EffectFade } from 'swiper';
 import "swiper/css";
 import 'swiper/css/effect-fade';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Header = () => {
     const [scrolled, setScrolled] = useState()
@@ -26,13 +28,17 @@ const Header = () => {
         }
     }, [])
 
+    useEffect(() => {
+        AOS.init()
+    }, [])
+
     return (
-        <div className='header'>
+        <div className='header' id='Home'>
             <Swiper
-                spaceBetween={30}
+                //spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 2500,
+                    delay: 5500,
                     disableOnInteraction: false,
                 }}
                 modules={[Autoplay, EffectFade]}
@@ -53,12 +59,16 @@ const Header = () => {
             <div class="topleft" style={scrolled ? { position: 'fixed', backgroundColor: 'black' } : { position: 'absolute' }}>
                 <Navbar></Navbar>
             </div>
-            <div className='welcome-section'>
-                <div className='text-center latter mb-4'>
+            <div className='welcome-section   mx-auto'>
+                <div className='text-center latter  mb-4'
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-shine">
                     <h1>Welcome to <span>START</span>HOTEL</h1>
                     <h4>Enjoy Your life with Us</h4>
                 </div>
-                <div className='text-center my-5 container'>
+                <div className='text-center container my-5'>
                     <HeaderDatePicker></HeaderDatePicker>
                 </div>
             </div>

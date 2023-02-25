@@ -1,0 +1,53 @@
+.progress-card {
+    .progress{
+        border-radius: 10px;
+        height: 13px;
+        margin-bottom: 18px;
+
+        .progress-1{
+            background: linear-gradient(to right, #f6943a 0%, rgba(255, 209, 48, 0.74) 100%);; 
+        }
+        .progress-2{
+            background: linear-gradient(45deg, #42ae94 25%, rgba(66, 174, 148, 0.99) 29%, rgba(89, 216, 243, 0.74) 100%);
+            ;
+         }
+        .progress-3{
+            background: linear-gradient(to right, #9658c7 0%, rgba(237, 60, 177, 0.74) 100%);
+        }
+    }
+    .marker {
+        height: 12px;
+        width: 12px;
+        margin-right: 8px;
+        border-radius: 12px;
+        display: inline-block;
+    }
+
+    .mark-1 {
+        background: linear-gradient(to right, #f6943a 0%, rgba(255, 209, 48, 0.74) 100%);
+        ;
+    }
+
+    .mark-2 {
+        background: linear-gradient(45deg, #42ae94 25%, rgba(66, 174, 148, 0.99) 29%, rgba(89, 216, 243, 0.74) 100%);
+        ;
+    }
+
+    .mark-3 {
+        background: linear-gradient(to right, #9658c7 0%, rgba(237, 60, 177, 0.74) 100%);
+        ;
+    }
+
+    .status {
+        font-size: 12px;
+        margin-bottom: 8px;
+        line-height: 1;
+    }
+
+    .result {
+        font-size: 16px;
+        color: #000;
+        font-weight: 700;
+
+    }
+}

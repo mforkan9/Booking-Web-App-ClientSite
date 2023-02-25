@@ -1,0 +1,35 @@
+.client-book {
+    .card {
+        .card-header {
+            padding: 12px 40px;
+            margin-bottom: 0;
+            background-color: rgba(0, 0, 0, .03);
+            border-bottom: 1px solid rgba(0, 0, 0, .125);
+        }
+
+        .card-body {
+            .date-list {
+                width: 85px;
+                padding-left: 35px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                text-align: center;
+
+                .date {
+                    background: #efefef;
+                    padding: 11px 19px;
+                    margin-top: 6px;
+
+                    h3 {
+                        color: #faa61a;
+                        font-size: 33.57px;
+                        font-weight: 900;
+                        margin-bottom: -8px;
+                    }
+                }
+            }
+        }
+
+    }
+
+}

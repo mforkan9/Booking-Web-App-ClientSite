@@ -1,0 +1,35 @@
+.review-publish-bx{
+    font-family: serif;
+    .img{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 10px;
+
+        i{
+            
+            font-size: 50px;
+            color: #000;
+        }
+    }
+    .info{
+        
+        .fs-16{
+            font-size: 1rem;
+            line-height: 1.6;
+            text-transform: capitalize;
+        }
+        h4{
+            font-weight: 600;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            color: #000;
+            padding: 0;
+            margin: 0;
+            text-transform: capitalize;
+        }
+        .fs-12{
+            font-size: 0.75rem;
+        }
+    }
+
+}

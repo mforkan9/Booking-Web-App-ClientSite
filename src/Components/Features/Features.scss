@@ -1,0 +1,66 @@
+.feature-Section{
+    font-family: serif;
+    .feature-page {
+
+        .feature-header {
+            // background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.55)), to(rgba(0, 0, 0, 0.55))), url('../images/room-listing-cover.jpg') 25% 77%;
+            // background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('./room-grid-cover.jpg') 25% 77%;
+            // background-size: 185%;
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.55)), to(rgba(0, 0, 0, 0.55))), url('https://demo-egenslab.b-cdn.net/html/hotelina/preview/assets/images/bg/inner-banner.png') 50% 63%;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://demo-egenslab.b-cdn.net/html/hotelina/preview/assets/images/bg/inner-banner.png') 50% 63%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 400px;
+            margin-top: 30px;
+    
+            .title {
+                margin-top: 150px;
+                color: #fff;
+                font-family: serif;
+    
+                h1 {
+                    font-size: 4rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .facilities-img{
+        height: 300px;
+        border-radius: 40px;
+        img{
+           width: 100%;
+           height: 100%;
+           border-radius: 40px;
+        }
+    }
+
+    .content{
+        margin-top: 10px;
+        padding: 10px;
+        span{
+            color: #ffcb05;
+            font-size: 26px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 18px;
+            
+        }
+        h3{
+            color: #1C171D;
+            font-size: 35px;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+            
+        }
+        p{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 32px;
+            line-break: anywhere;
+        }
+    }
+}

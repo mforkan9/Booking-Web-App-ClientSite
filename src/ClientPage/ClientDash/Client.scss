@@ -1,0 +1,74 @@
+.client-dash {
+    padding-top: 118px;
+    font-family: serif;
+
+    .desh-heading {
+        h2 {
+            font-size: 50px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #212529;
+
+            span {
+                color: #ffc107;
+            }
+        }
+
+        p {
+            font-size: 28px;
+        }
+    }
+
+    .desh-inner {
+        .sidenav {
+            margin-top: 12px;
+            text-align: center;
+
+            .li {
+                background: #303030;
+                color: white;
+                border-radius: 0px;
+                border: 0px;
+                font-size: 18px;
+                font-weight: 900;
+                padding: 20px 0px;
+                margin-bottom: 5px;
+                text-rendering: auto;
+            }
+
+            .li:hover{
+                background: #faa61a;
+                color: white;
+               // border-top: 4px solid #000;
+            }
+
+            .activeClass{
+                background: #faa61a;
+                color: white;
+                border-radius: 0px;
+                border: 0px;
+                font-size: 18px;
+                font-weight: 900;
+                padding: 20px 0px;
+                margin-bottom: 5px;
+                text-rendering: auto;
+                border-top: 4px solid #000;
+            }
+
+            i {
+                border: 2px solid white;
+                color: white;
+                border-radius: 100%;
+                display: block;
+                font-size: 25px;
+                margin: 0 auto 10px;
+                height: 55px;
+                width: 55px;
+                text-align: center;
+                padding-top: 13px;
+                text-rendering: auto;
+            }
+        }
+    }
+}

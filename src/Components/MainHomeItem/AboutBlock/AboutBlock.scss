@@ -1,0 +1,56 @@
+.about-block {
+    margin-top: 100px;
+    font-family: serif;
+    color: #000;
+
+    .section-title {
+        padding: 5px;
+
+        span {
+            color: #ffcb05;
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 50px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+    }
+
+    .quote{
+        padding: 10px;
+        border-left: 2px solid #ffcb05;
+        p{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        h4{
+            font-size: 30px;
+            font-weight: 400;
+            color: #ffcb05;
+        }
+    }
+
+    .about-img {
+        
+        .rating {
+            background: linear-gradient(rgba(255, 203, 5, 0.8), rgba(255, 203, 5, 0.7));
+            border: 1px solid rgba(28, 23, 29, .05);
+            //box-shadow: 0 0 15px rgba(252 240 234 / 5%);
+            border-radius: 10px;
+            padding: 50px 40px;
+            text-align: center;
+
+            h2{
+                margin-top: 10px;
+                font-weight: 600;
+                font-size: 50px;
+            }
+        }
+
+    }
+}

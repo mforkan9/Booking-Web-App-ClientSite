@@ -1,0 +1,50 @@
+.footer {
+    background: black;
+    margin-top: 100px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    font-family: serif;
+
+    .more-about {
+        width: 700px;
+        margin: 0 auto;
+        text-align: center;
+
+        h1 {
+            font-family: serif;
+            font-weight: 800;
+            color: #fff;
+
+            span {
+                color: #ffcb05;
+            }
+        }
+
+        p {
+            color: #fff;
+        }
+
+        .social-link {
+            li {
+                padding-right: 9px;
+                padding-left: 9px;
+                margin-top: 15px;
+                width: 55px;
+                height: 55px;
+                border:1px solid #ffcb05;
+                border-radius: 100%;
+                color: #ffcb05;
+
+                i {
+                    font-size: 29px;
+                    padding: auto;
+                }
+            }
+            li:hover{
+                background-color: #ffcb05;
+                color: black;
+            }
+        }
+    }
+
+}

@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { ToggleButton } from '@mui/material';
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import img1 from './profile-user.png'
@@ -12,16 +11,19 @@ const Admin = () => {
     setToggler(current => !current)
   }
 
+
   
 
   return (
     <div className=' container-fluid'>
-      <div className='row'>
-        <div className={toggler ? 'col-auto col-md-3 col-lg-3 col-xl-2  px-sm-2 px-0 offcanvas show sidebar' : 'col-auto col-md-3 col-lg-3 col-xl-2 px-sm-2 px-0 col-xxl-2  d-none d-sm-block sidebar'}>
-          <div className='d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 make-me-sticky'>
+      <div className='row '>
+        <div  className={toggler ? 'col-auto  col-md-10 col-lg-3 col-xl-2 px-0 offcanvas show sidebar'  : ' col-auto col-md-3 col-lg-3 col-xl-2  px-0 col-xxl-2  d-none d-sm-block d-sm-none d-md-block sidebar '}>
+          <div className='d-flex  flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 sticky' >
             <div className='text-dark d-flex'>
+              <Link to={'/'}>
               <h3>START<span>HOTEL</span></h3>
-              <button type="button" class="btn-close text-reset mx-3 my-1 d-lg-none d-xl-block d-md-none d-lg-block d-xl-none d-sm-none d-md-block" onClick={handleToggle}></button>
+              </Link>
+              <button type="button" class="btn-close text-reset mx-3 my-3 d-lg-none  d-md-none  d-xl-none d-sm-none " onClick={handleToggle}></button>
             </div>
             <ul className='nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start  text-dark' id='menu'>
               <li>
@@ -47,10 +49,10 @@ const Admin = () => {
                   <div className="collapse mt-2  bg-light" id="collapseExample">
                   <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Create</small> </a> </Link> 
                   <Link to={'/adminDashboard/roomList'}> <a href='#' className='item-list'><small>All</small> </a> </Link> 
-                  <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Active</small> </a> </Link> 
-                  <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Draft</small> </a> </Link> 
-                  <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Expried</small> </a> </Link> 
-                  <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Featured</small> </a> </Link> 
+                  <Link to={'/adminDashboard/roomActive'}> <a href='#' className='item-list'><small>Active</small> </a> </Link> 
+                  {/* <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Draft</small> </a> </Link>  */}
+                  <Link to={'/adminDashboard/roomExpried'}> <a href='#' className='item-list'><small>Booked</small> </a> </Link> 
+                  {/* <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Featured</small> </a> </Link>  */}
                   </div>
                
               </li>
@@ -67,15 +69,23 @@ const Admin = () => {
                     <span><i className='fa fa-chevron-down arrow  arrowed'></i></span>
                   </a>
                   <div className="collapse mt-2  bg-light" id="collapseExampleBooking">
-                  <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Create</small> </a> </Link> 
-                  <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Create</small> </a> </Link> 
-                  <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Create</small> </a> </Link> 
-                  <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Create</small> </a> </Link> 
+                  <Link to={'/adminDashboard/bookings'}> <a href='#' className='item-list'><small>All</small> </a> </Link> 
+                  <Link to={'/adminDashboard/pendingbookings'}> <a href='#' className='item-list'><small>Pending</small> </a> </Link> 
+                  <Link to={'/adminDashboard/approvedbookings'}> <a href='#' className='item-list'><small>Approved</small> </a> </Link> 
+                  <Link to={'/adminDashboard/cancelbookings'}> <a href='#' className='item-list'><small>Canceled</small> </a> </Link> 
                   </div>
                
               </li>
               <li>
-                <Link to={'/adminDashboard/'}>
+                <Link to={'/adminDashboard/guest'}>
+                  <a href="#">
+                    <span><i class="bi bi-people fs-4"></i></span>
+                    <span>Guest List</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link to={'/adminDashboard/reviews/'}>
                   <a href="#">
                     <span><i class="bi bi-file-text fs-4" title='title'></i></span>
                     <span>Reviews</span>
@@ -83,7 +93,15 @@ const Admin = () => {
                 </Link>
               </li>
               <li>
-                <Link to={'/adminDashboard/'}>
+                <Link to={'/adminDashboard/galleryManage'}>
+                  <a href="#">
+                    <span><i class="bi bi-images fs-4"></i></span>
+                    <span>Gallery Manage</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link to={'/adminDashboard/users/userlist'}>
                   <a href="#">
                     <span><i class="bi bi-person-fill fs-3"></i></span>
                     <span>Profile</span>
@@ -94,23 +112,21 @@ const Admin = () => {
             </ul>
           </div>
         </div>
-        <div className='col-md-9 col-lg-9 col-xl-10 col-xxl-10  col-auto py-3 '>
-          <main className='row col overflow-auto'>
-            <nav class="navbar navbar-expand-lg navbar-light">
+        <div  className=' col-md-9 col-lg-9 col-xl-10 col-xxl-10  col-12 p-0'>
+          <main className=''>
+            <nav className="navbar navbar-expand-lg navbar-light py-3 stick" >
               <div class="container-fluid">
-                <div className='d-none d-sm-block make-me-sticky'>
-                  <h3>Booking</h3>
+                <div className='d-none d-sm-block d-sm-none d-md-block '>
+                  
                 </div>
-                <div class=" d-lg-none d-xl-block d-md-none d-lg-block d-xl-none d-sm-none d-md-block" id="navbarSupportedContent">
-                  <ToggleButton value="justify" key="justify" onClick={handleToggle}>
-                    Toggle
-                  </ToggleButton>
+                <div class=" d-lg-none d-xl-block d-md-none d-lg-block d-xl-none" id="navbarSupportedContent">
+                  <i class="bi bi-list fs-1 fw-bold text-dark ripple" role={'button'} onClick={handleToggle}></i>
                 </div>
                 <div class="d-flex align-items-center">
                   <ul class="navbar-nav me-auto  mb-lg-0">
-                    <li class="nav-item">
+                    {/* <li class="nav-item">
                       <a class="nav-link me-3 fw-bold " href="#">ghfg</a>
-                    </li>
+                    </li> */}
                   </ul>
 
                   {/* <a href="#" class="cart position-relative d-inline-flex m-2 me-4 " aria-label="View your shopping cart" >
@@ -144,12 +160,12 @@ const Admin = () => {
                         aria-labelledby="navbarDropdownMenuAvatar"
                       >
                         <li>
-                          <Link to='/dashboard/profile' className='dropdown-item d-flex'>
+                          <Link to='/adminDashboard/users' className='dropdown-item d-flex'>
                             <i class="bi bi-person-circle fs-5 me-2"></i>
                             <a class="my-1 text-dark" href="#">Profile</a>
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={() => window.location.reload()}>
                           <span className='dropdown-item d-flex'> <i class="bi bi-box-arrow-left fs-5 me-2"></i> <a class="my-1 text-dark" href="#"> LogOut</a> </span>
                         </li>
 
@@ -160,7 +176,7 @@ const Admin = () => {
                 </div>
               </div>
             </nav>
-            <div className='mb-5' onClick={() => setToggler(false)} >
+            <div className=' p-3 ' onClick={() => setToggler(false)}>
               <Outlet></Outlet>
             </div>
           </main>

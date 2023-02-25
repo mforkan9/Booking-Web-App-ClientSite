@@ -25,7 +25,7 @@ const NavHeader = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='col-md-4 col-lg-4 col-xl-4 col-4 text-end'>
+                <div className='col-md-4 col-lg-4 col-xl-4 col-4 text-end '>
                     <div className='links text-dark my-2'>
                         <ul className='list-unstyled list-inline'>
                             <li className='list-inline-item me-3'>

@@ -6,51 +6,73 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import Spineer from '../../SharedComponent/Spinner/Spineer';
+import Footer from '../../SharedComponent/Footer/Footer';
 
 
 const sliderSwipe = [
     {
         imgUrl: "https://placeimg.com/800/600/nature?random=3"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=4"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=5"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=6"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=8"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=9"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=0"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=1"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=33"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=66"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=39"
-      },
-      {
+    },
+    {
         imgUrl: "https://placeimg.com/800/600/nature?random=39"
-      },
+    },
 ]
 
 
 
 const RoomDetails = () => {
+    const { id } = useParams()
+    const [roomData, setRoomData] = useState({})
+    const [roomInnerImage, setRoomInnerImage] = useState([])
+    const [loader, setloader] = useState(true)
+
+    useEffect(() => {
+        fetch(`http://localhost:8000/api/v1/room/roomFindById/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setRoomData(data?.value)
+                setRoomInnerImage(data?.value?.roomInnerImage)
+                setloader(false)
+            })
+    }, [id])
+
+
+
+    console.log(roomData, roomInnerImage);
 
     return (
         <div className='room-details-page '>
@@ -118,22 +140,32 @@ const RoomDetails = () => {
                         </div>
                         <div className='col-md-12 col-lg-9 col-12 mx-auto  '>
                             <div className='border'>
-                                <div className='thumb-slider '>
+                                <div className='carousel-slider '>
+                                    {
+                                        loader && <Spineer></Spineer>
+                                    }
+                                    <div className='room-Inner-Carousel'>
+                                        <div className='price-tag'>
+                                            <p><span>$ {roomData.ratePerNight} </span>/ Per Night</p>
+                                        </div>
+                                    </div>
                                     <Swiper
                                         pagination={{
                                             clickable: true,
                                         }}
                                         autoplay={{
-                                            delay: 1000,
+                                            delay: 3000,
                                             disableOnInteraction: false,
                                         }}
                                         modules={[Pagination, Autoplay]}
                                         className="mySwiper"
                                     >
                                         {
-                                            sliderSwipe.map(item =>
+                                            roomInnerImage.map(item =>
                                                 <SwiperSlide>
-                                                    <img src={item.imgUrl} width='100%' alt="" />
+                                                    <div className='' style={{ height: '600px' }}>
+                                                        <img src={item} width='100%' height={'100%'} alt="" />
+                                                    </div>
                                                 </SwiperSlide>
                                             )
                                         }
@@ -167,7 +199,7 @@ const RoomDetails = () => {
                                         </div>
                                         <div className='col-md-2 col-4  mb-3  facility-block'>
                                             <span>
-                                            <i class="fa fa-cutlery fs-3" aria-hidden="true"></i>                                            </span>
+                                                <i class="fa fa-cutlery fs-3" aria-hidden="true"></i>                                            </span>
                                             <p>Food Serve</p>
                                         </div>
                                         <div className='col-md-2 col-4 mb-3 facility-block'>
@@ -180,7 +212,7 @@ const RoomDetails = () => {
                                 </div>
                                 <div className='room-description'>
                                     <div className='container mt-5 mb-4'>
-                                        <h2 className='mb-0'>Double Room</h2>
+                                        <h2 className='mb-0'>{roomData.roomType} Room</h2>
                                         <p className='text-muted'>A room with sea view</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut the enim ad minim veniam, quis nostrud exer citation ullamco laboris nisi ut aliquip ex ea com modo conse quat. Duis aute irure dolor in reprehend erit in volupt ate velit esse cillum dolore eu fugiat nulla pari atur. Except eur sint occa ecat cupi datat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit volup tatem accusantium the doloremque lauda ntium, totam rem aper iam, eaque ipsa quae
 
@@ -188,7 +220,7 @@ const RoomDetails = () => {
 
                                             Cras volutpat ornare lectus, ut pulvinar neque pretium eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam placerat tortor at suscipit. Nunc iaculis libero a quam consequat molestie.</p>
                                         <div className='text-end'>
-                                          <Link to={'/roomReservation'}> <button type="button" class="btn btn-warning btn-rounded text-dark">Book Now</button></Link> 
+                                            <Link to={`/roomReservation/${id}`}> <button type="button" class="btn btn-warning btn-rounded text-dark">Book Now</button></Link>
 
                                         </div>
                                     </div>
@@ -200,7 +232,7 @@ const RoomDetails = () => {
                     </div>
                 </div>
             </div>
-
+        <Footer></Footer>
         </div>
     );
 };

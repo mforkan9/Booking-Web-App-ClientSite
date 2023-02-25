@@ -1,9 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './RoomBanner.scss'
-import {  Rating } from '@mui/material';
+import { Rating } from '@mui/material';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
-import img1 from './evan-wise-zevKQbUrcbw-unsplash.jpg'
+import { useState } from 'react';
+import { useEffect } from 'react';
+
 
 
 
@@ -47,50 +50,58 @@ const sliderSwipe = [
 
 ]
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  initialSlide: 1,
+  rows: 2,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1
+      }
+    },
+    {
+      breakpoint: 0,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+}
+
 
 const RoomBanner = () => {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 1,
-    rows: 2,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1
-        }
-      },
-      {
-        breakpoint: 0,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
+  const [bannerRoom, setBannerRoom] = useState([])
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/api/v1/room/bannerRoom`)
+      .then(res => res.json())
+      .then(data => setBannerRoom(data.data))
+  }, [])
+
   return (
-    <div>
-      <div className='row container mx-auto roombanner'>
+   
+      <div className='row container mx-auto roombanner' id='Rooms'>
         <div className='col-md-12 title'>
           <h2>Our <span>Rooms</span> </h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -99,23 +110,22 @@ const RoomBanner = () => {
         <div>
           <Slider {...settings} className=''>
             {
-              sliderSwipe.map(item =>
-
-                <div className=''>
+              bannerRoom.map(item =>
+                <div key={item._id} className=''>
                   <div class="mx-3 my-3 roomCard  card" >
                     <div class="roomBody hover-zoom bg-image">
-                      <img src={item.imgUrl} alt=""/>
+                      <img src={item.roomImage} alt="" />
                       <div className='room-overlay text-start'>
-                        <h2 className=''>Single Room</h2>
+                        <h2 className=''>{item.roomType}</h2>
                         <Rating defaultValue={5} size='small'></Rating>
                       </div>
                     </div>
                     <div className='row mt-2 text-center'>
                       <div className='col-md-6 col-6'>
-                        <p className='title'>67 Night</p>
+                        <p className='fw-bold'>{item.ratePerNight}$ Night</p>
                       </div>
                       <div className='col-md-6 col-6'>
-                    <Link to={'/roomDetails'} ><a href='#' className='text-muted mt-5'>view details</a></Link>    
+                        <Link to={`/roomDetails/${item._id}`} ><a href='#' className='text-muted mt-5'>view details</a></Link>
                       </div>
                     </div>
                   </div>
@@ -126,7 +136,7 @@ const RoomBanner = () => {
           </Slider>
         </div>
       </div>
-    </div>
+
   );
 };
 
