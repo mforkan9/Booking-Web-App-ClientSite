@@ -18,7 +18,7 @@ const ClientProfile = () => {
     useEffect(() => {
 
         const FetchData = async () => {
-            const res = await fetch(`http://localhost:8000/api/v1/client/findUserByToken/${user.email}`, {
+            const res = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/client/findUserByToken/${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${user.accessToken}`

@@ -18,7 +18,7 @@ const RoomList = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/room/createRoom?page=${activePage}&limit=${dataLimit}&&filter=${filterData}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/createRoom?page=${activePage}&limit=${dataLimit}&&filter=${filterData}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -40,7 +40,7 @@ const RoomList = () => {
         const procced = window.confirm('Are You Sure Delete this Item')
         if (procced) {
             try {
-                const response = await fetch(`http://localhost:8000/api/v1/room/deleteRoom/${id}`, {
+                const response = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/deleteRoom/${id}`, {
                     method: 'DELETE'
                 })
                 const result =  response
@@ -66,7 +66,7 @@ const RoomList = () => {
                 <div class="row mb-3">
                     <div class="col-auto me-auto"></div>
                     <div class="col-auto my-3">
-                        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Add New <span><i class="bi bi-plus-circle-fill fs-6 ms-2"></i></span></button>
+                       <Link to={'/adminDashboard/roomAdd'}><button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Add New <span><i class="bi bi-plus-circle-fill fs-6 ms-2"></i></span></button></Link> 
                     </div>
                 </div>
                 <div class="row mb-3">

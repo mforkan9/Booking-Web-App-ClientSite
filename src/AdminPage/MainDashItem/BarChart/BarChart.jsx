@@ -7,18 +7,18 @@ const BarChart = () => {
     const [pendingData,setPendingData] = useState(0)
     const [canceledData,setCanceledData] = useState(0)
 
-    // const {data} = useFetch(`http://localhost:8000/api/v1/booking/allBooking`)
+    // const {data} = useFetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/allBooking`)
 
     // console.log(data)
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/booking/statusBooking?status=approved`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/statusBooking?status=approved`)
             .then(res => res.json())
             .then(data =>setApprovedData(data.totalData))
-        fetch(`http://localhost:8000/api/v1/booking/statusBooking?status=pending`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/statusBooking?status=pending`)
             .then(res => res.json())
             .then(data =>setPendingData(data.totalData))
-        fetch(`http://localhost:8000/api/v1/booking/statusBooking?status=canceled`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/statusBooking?status=canceled`)
             .then(res => res.json())
             .then(data =>setCanceledData(data.totalData))
     }, [])

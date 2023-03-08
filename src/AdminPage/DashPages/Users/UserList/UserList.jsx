@@ -4,7 +4,7 @@ const UserList = () => {
     const [allAdmin, setAllAdmin] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:8000/api/v1/admin/getAllUser')
+        fetch('https://start-hotel-practice-project.onrender.com/api/v1/admin/getAllUser')
             .then(res => res.json())
             .then(data => setAllAdmin(data.data))
     }, [])

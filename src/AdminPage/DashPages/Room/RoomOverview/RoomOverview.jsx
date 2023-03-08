@@ -14,7 +14,7 @@ const RoomOverview = () => {
     const [activePage, setActivePage] = useState(1)
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/room/roomBookingDate/${id}?page=${activePage}&limit=${5}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/roomBookingDate/${id}?page=${activePage}&limit=${5}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -32,7 +32,7 @@ const RoomOverview = () => {
 
     const handleFindById = (id) =>{
 
-        fetch(`http://localhost:8000/api/v1/booking/bookingFindById/${id}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/bookingFindById/${id}`)
         .then(res => res.json())
         .then(data => setBookingOverview(data.data))
      }

@@ -33,7 +33,7 @@ const ProfileEdit = () => {
     const handleSubmit = (e) =>{
         e.preventDefault()
         
-        fetch(`http://localhost:8000/api/v1/client/profileUpdate/${user.email}`,{
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/client/profileUpdate/${user.email}`,{
             method:'PATCH',
             headers:{
                 'authorization': `Bearer ${user.accessToken}`,

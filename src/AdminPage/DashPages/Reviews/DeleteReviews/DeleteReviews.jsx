@@ -11,7 +11,7 @@ const DeleteReviews = () => {
     const [dataLimit, setDataLimit] = useState(4)
     const [updateSuccess, setUpdateSuccess] = useState(false)
 
-    const url = (`http://localhost:8000/api/v1/review/getReviewsByStatus?status=deleted`)
+    const url = (`https://start-hotel-practice-project.onrender.com/api/v1/review/getReviewsByStatus?status=deleted`)
 
     const { data, isPending } = useFetch(url)
 

@@ -11,7 +11,7 @@ const useToken = (user) => {
             email:user?.email
         }
         if (email && emailVerified) {
-            fetch(`http://localhost:8000/api/v1/client/createUser/${email}`,{
+            fetch(`https://start-hotel-practice-project.onrender.com/api/v1/client/createUser/${email}`,{
                 method:'PUT',
                 headers:{
                     'content-type':'application/json',

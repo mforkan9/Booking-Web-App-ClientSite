@@ -16,7 +16,7 @@ const ClientDashboard = () => {
 
     useEffect(() => {
         const FetchData = async () => {
-            const res = await fetch(`http://localhost:8000/api/v1/client/findUserByToken/${user.email}`, {
+            const res = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/client/findUserByToken/${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${user.accessToken}`
@@ -41,7 +41,7 @@ const ClientDashboard = () => {
     const onSubmit = async(formData) =>{
         const reviewsData = {...formData,email:user.email}
         console.log(reviewsData)
-        const result = await fetch(`http://localhost:8000/api/v1/review/postReviews`,{
+        const result = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/review/postReviews`,{
             method:'POST',
             headers:{
                 'content-type' : 'application/json'
@@ -114,7 +114,7 @@ const ClientDashboard = () => {
                         <div className=''>
                             {
                                 [...activity].reverse().slice(0,5).map(data =>
-                                    <div class="row g-0 py-1 px-3 align-items-center border-bottom">
+                                    <div class="row  g-0 py-3 px-3 align-items-center border-bottom">
                                         <div class="col-8 col-sm-6 col-md-8 px-2">
                                           <span className='align-middle text-dark fw-bold'>{data.text}</span>
                                         </div>

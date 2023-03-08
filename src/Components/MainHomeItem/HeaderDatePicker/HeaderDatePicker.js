@@ -35,9 +35,9 @@ const HeaderDatePicker = () => {
             capcity: capcity
         }
         console.log(checkData)
-        // await disPatchReq(`http://localhost:8000/api/v1/room/checkAvailability`,'POST',{checkData})
+        // await disPatchReq(`https://start-hotel-practice-project.onrender.com/api/v1/room/checkAvailability`,'POST',{checkData})
         setLoading(true)
-        fetch(`http://localhost:8000/api/v1/room/checkAvailability`, {
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/checkAvailability`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -25,7 +25,7 @@ const ClientBooking = () => {
     useEffect(() => {
 
         const FetchData = async () => {
-            const res = await fetch(`http://localhost:8000/api/v1/client/findUserByToken/${user.email}?page=${activePage}&limit=${dataLimit}`, {
+            const res = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/client/findUserByToken/${user.email}?page=${activePage}&limit=${dataLimit}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${user.accessToken}`
@@ -49,7 +49,7 @@ const ClientBooking = () => {
 
     const bookingCancel = async (id,roomId) =>{
         setCancelSpinner(true)
-       const fetchData = await fetch(`http://localhost:8000/api/v1/booking/cancelBooking/${id}?email=${user.email}`,{
+       const fetchData = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/cancelBooking/${id}?email=${user.email}`,{
             method:'PATCH',
             headers:{
                 'content-type':'application/json'

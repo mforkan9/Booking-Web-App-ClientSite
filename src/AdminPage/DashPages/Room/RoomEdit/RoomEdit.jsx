@@ -90,7 +90,7 @@ const RoomEdit = () => {
     //GET Edit Room Data
     useEffect(() => {
         try {
-            fetch(`http://localhost:8000/api/v1/room/roomFindById/${id}`)
+            fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/roomFindById/${id}`)
                 .then(res => res.json())
                 .then(data => {
                     setGetData(data?.value)
@@ -128,7 +128,7 @@ const RoomEdit = () => {
     const handleSubmitData = (e) => {
         e.preventDefault()
 
-        const uri = `http://localhost:8000/api/v1/room/editRoom/${id}`
+        const uri = `https://start-hotel-practice-project.onrender.com/api/v1/room/editRoom/${id}`
         const requested = {
             method: 'PATCH',
             headers: {
@@ -166,7 +166,7 @@ const RoomEdit = () => {
     }
 
     const handleDeleteInnerImg = (index) => {
-        fetch(`http://localhost:8000/api/v1/room/deleteInner?id=${id}&&index=${index}`, {
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/deleteInner?id=${id}&&index=${index}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

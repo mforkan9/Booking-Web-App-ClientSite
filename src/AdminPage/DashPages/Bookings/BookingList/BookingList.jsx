@@ -16,7 +16,7 @@ const BookingList = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/booking/allBooking?page=${activePage}&limit=${limit}&filter=${filterData}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/allBooking?page=${activePage}&limit=${limit}&filter=${filterData}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -36,7 +36,7 @@ const BookingList = () => {
 
     const handleFindById = (id) => {
 
-        fetch(`http://localhost:8000/api/v1/booking/bookingFindById/${id}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/bookingFindById/${id}`)
             .then(res => res.json())
             .then(data => setBookingDetails(data.data))
     }
@@ -45,7 +45,7 @@ const BookingList = () => {
         const procced = window.confirm('Are You Sure Delete this Item')
         if (procced) {
             try {
-                const response = await fetch(`http://localhost:8000/api/v1/booking/deleteBooking/${id}`, {
+                const response = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/deleteBooking/${id}`, {
                     method: 'DELETE'
                 })
                 const result =  response

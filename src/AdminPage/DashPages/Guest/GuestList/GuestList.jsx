@@ -14,7 +14,7 @@ const GuestList = () => {
     const [deletedSuccess,setDeletedSuccess] = useState(false)
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/client/allClient?&page=${activePage}&limit=${dataLimit}&filter=${filterData}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/client/allClient?&page=${activePage}&limit=${dataLimit}&filter=${filterData}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -35,7 +35,7 @@ const GuestList = () => {
         const procced = window.confirm('Are You Sure Delete this Item')
         if (procced) {
             try {
-                const response = await fetch(`http://localhost:8000/api/v1/client/deleteClient/${id}`, {
+                const response = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/client/deleteClient/${id}`, {
                     method: 'DELETE'
                 })
                 const result =  response

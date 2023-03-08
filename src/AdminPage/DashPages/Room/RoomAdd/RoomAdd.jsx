@@ -93,7 +93,7 @@ const RoomAdd = () => {
     const handleSubmitData = (e) => {
         e.preventDefault()
 
-        const uri = `http://localhost:8000/api/v1/room/createRoom`
+        const uri = `https://start-hotel-practice-project.onrender.com/api/v1/room/createRoom`
         const requested = {
             method: 'POST',
             headers: {

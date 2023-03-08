@@ -13,7 +13,7 @@ import Spineer from '../../../SharedComponent/Spinner/Spineer';
 const GalleryBlock = () => {
     const [galleryImages, setGalleryImages] = useState([])
 
-   // const { data, isPending } = useFetch(`http://localhost:8000/api/v1/hotelGallery/getAllImage`)
+   // const { data, isPending } = useFetch(`https://start-hotel-practice-project.onrender.com/api/v1/hotelGallery/getAllImage`)
 
     // useEffect(() => {
     //     if (data?.status === 'success') {
@@ -22,7 +22,7 @@ const GalleryBlock = () => {
     // })
     
   useEffect(() => {
-    fetch(`http://localhost:8000/api/v1/hotelGallery/getAllImage`)
+    fetch(`https://start-hotel-practice-project.onrender.com/api/v1/hotelGallery/getAllImage`)
       .then(res => res.json())
       .then(data => setGalleryImages(data?.result))
   }, [])

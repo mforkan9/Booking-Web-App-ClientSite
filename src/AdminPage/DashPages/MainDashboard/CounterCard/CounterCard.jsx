@@ -8,19 +8,19 @@ const CounterCard = () => {
     const [allReviews,setAllReviews] = useState(0)
     
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/booking/allBooking`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/allBooking`)
         .then(res => res.json())
         .then(data => setAllBooking(data.totalData))
 
-        fetch(`http://localhost:8000/api/v1/room/createRoom`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/createRoom`)
         .then(res => res.json())
         .then(data => setAllRoom(data.totalData))
 
-        fetch(`http://localhost:8000/api/v1/client/allClient`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/client/allClient`)
         .then(res => res.json())
         .then(data => setAllGuest(data.totalCount))
 
-        fetch(`http://localhost:8000/api/v1/review/getAllReviews`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/review/getAllReviews`)
         .then(res => res.json())
         .then(data => setAllReviews(data.total))
     }, [])

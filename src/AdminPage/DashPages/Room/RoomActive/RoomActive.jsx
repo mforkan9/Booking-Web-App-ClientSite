@@ -14,7 +14,7 @@ const RoomActive = () => {
     const [filterData, setFilterData] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/room/roomFindByStatus?status=${'Active'}&page=${activePage}&limit=${dataLimit}&&filter=${filterData}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/roomFindByStatus?status=${'Active'}&page=${activePage}&limit=${dataLimit}&&filter=${filterData}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

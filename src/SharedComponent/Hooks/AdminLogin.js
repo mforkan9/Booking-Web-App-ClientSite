@@ -18,7 +18,7 @@ const AdminLogin = () => {
     let from = location.state?.from?.pathname || "/";
 
     const handleAdmin = (data) => {
-        fetch(`http://localhost:8000/api/v1/admin/findUser`, {
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/admin/findUser`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -15,7 +15,7 @@ const AllReviews = () => {
 
     const dataLimit = 4
 
-    const url = (`http://localhost:8000/api/v1/review/getAllReviews?&page=${activePage}&limit=${dataLimit}`)
+    const url = (`https://start-hotel-practice-project.onrender.com/api/v1/review/getAllReviews?&page=${activePage}&limit=${dataLimit}`)
 
    // const { data, isPending } = useFetch(url,updateSuccess)
 
@@ -47,7 +47,7 @@ const AllReviews = () => {
     }
 
     const handleStatusUpdate = async(id,status) =>{
-        const response = await fetch(`http://localhost:8000/api/v1/review/updateReview/${id}`,{
+        const response = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/review/updateReview/${id}`,{
             method:'PATCH',
             headers:{
                 'content-type':'application/json'

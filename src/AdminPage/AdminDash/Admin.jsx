@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link , NavLink, Outlet } from 'react-router-dom';
 import img1 from './profile-user.png'
 import './Admin.scss'
 
@@ -12,27 +12,25 @@ const Admin = () => {
   }
 
 
-  
-
   return (
     <div className=' container-fluid'>
       <div className='row '>
         <div  className={toggler ? 'col-auto  col-md-10 col-lg-3 col-xl-2 px-0 offcanvas show sidebar'  : ' col-auto col-md-3 col-lg-3 col-xl-2  px-0 col-xxl-2  d-none d-sm-block d-sm-none d-md-block sidebar '}>
           <div className='d-flex  flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 sticky' >
             <div className='text-dark d-flex'>
-              <Link to={'/'}>
+              <Link  to={'/'}>
               <h3>START<span>HOTEL</span></h3>
               </Link>
               <button type="button" class="btn-close text-reset mx-3 my-3 d-lg-none  d-md-none  d-xl-none d-sm-none " onClick={handleToggle}></button>
             </div>
             <ul className='nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start  text-dark' id='menu'>
               <li>
-                <Link to={'/adminDashboard/'}>
+                <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/'}>
                   <a href="#">
                     <span><i class="bi bi-speedometer2 fs-4"></i></span>
                     <span>Dashboard</span>
                   </a>
-                </Link>
+                </NavLink>
               </li>
               <li>
                
@@ -47,11 +45,11 @@ const Admin = () => {
                     <span><i className='fa fa-chevron-down arrow  arrowed'></i></span>
                   </a>
                   <div className="collapse mt-2  bg-light" id="collapseExample">
-                  <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Create</small> </a> </Link> 
-                  <Link to={'/adminDashboard/roomList'}> <a href='#' className='item-list'><small>All</small> </a> </Link> 
-                  <Link to={'/adminDashboard/roomActive'}> <a href='#' className='item-list'><small>Active</small> </a> </Link> 
+                  <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Create</small> </a> </NavLink> 
+                  <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/roomList'}> <a href='#' className='item-list'><small>All</small> </a> </NavLink> 
+                  <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/roomActive'}> <a href='#' className='item-list'><small>Active</small> </a> </NavLink> 
                   {/* <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Draft</small> </a> </Link>  */}
-                  <Link to={'/adminDashboard/roomExpried'}> <a href='#' className='item-list'><small>Booked</small> </a> </Link> 
+                  <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/roomExpried'}> <a href='#' className='item-list'><small>Booked</small> </a> </NavLink> 
                   {/* <Link to={'/adminDashboard/roomAdd'}> <a href='#' className='item-list'><small>Featured</small> </a> </Link>  */}
                   </div>
                
@@ -69,44 +67,44 @@ const Admin = () => {
                     <span><i className='fa fa-chevron-down arrow  arrowed'></i></span>
                   </a>
                   <div className="collapse mt-2  bg-light" id="collapseExampleBooking">
-                  <Link to={'/adminDashboard/bookings'}> <a href='#' className='item-list'><small>All</small> </a> </Link> 
-                  <Link to={'/adminDashboard/pendingbookings'}> <a href='#' className='item-list'><small>Pending</small> </a> </Link> 
-                  <Link to={'/adminDashboard/approvedbookings'}> <a href='#' className='item-list'><small>Approved</small> </a> </Link> 
-                  <Link to={'/adminDashboard/cancelbookings'}> <a href='#' className='item-list'><small>Canceled</small> </a> </Link> 
+                  <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/bookings'}> <a href='#' className='item-list'><small>All</small> </a> </NavLink> 
+                  <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/pendingbookings'}> <a href='#' className='item-list'><small>Pending</small> </a> </NavLink> 
+                  <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/approvedbookings'}> <a href='#' className='item-list'><small>Approved</small> </a> </NavLink> 
+                  <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/cancelbookings'}> <a href='#' className='item-list'><small>Canceled</small> </a> </NavLink> 
                   </div>
                
               </li>
               <li>
-                <Link to={'/adminDashboard/guest'}>
+                <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/guest'}>
                   <a href="#">
                     <span><i class="bi bi-people fs-4"></i></span>
                     <span>Guest List</span>
                   </a>
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={'/adminDashboard/reviews/'}>
+                <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/reviews/'}>
                   <a href="#">
                     <span><i class="bi bi-file-text fs-4" title='title'></i></span>
                     <span>Reviews</span>
                   </a>
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={'/adminDashboard/galleryManage'}>
+                <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/galleryManage'}>
                   <a href="#">
                     <span><i class="bi bi-images fs-4"></i></span>
                     <span>Gallery Manage</span>
                   </a>
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={'/adminDashboard/users/userlist'}>
+                <NavLink className={({ isActive }) => isActive ? 'activeDashitem' : undefined} to={'/adminDashboard/users/userlist'}>
                   <a href="#">
                     <span><i class="bi bi-person-fill fs-3"></i></span>
                     <span>Profile</span>
                   </a>
-                </Link>
+                </NavLink>
               </li>
 
             </ul>
@@ -160,10 +158,10 @@ const Admin = () => {
                         aria-labelledby="navbarDropdownMenuAvatar"
                       >
                         <li>
-                          <Link to='/adminDashboard/users' className='dropdown-item d-flex'>
+                          <NavLink to='/adminDashboard/users/userlist' className='dropdown-item d-flex'>
                             <i class="bi bi-person-circle fs-5 me-2"></i>
                             <a class="my-1 text-dark" href="#">Profile</a>
-                          </Link>
+                          </NavLink>
                         </li>
                         <li onClick={() => window.location.reload()}>
                           <span className='dropdown-item d-flex'> <i class="bi bi-box-arrow-left fs-5 me-2"></i> <a class="my-1 text-dark" href="#"> LogOut</a> </span>

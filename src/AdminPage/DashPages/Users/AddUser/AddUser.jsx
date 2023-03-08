@@ -6,7 +6,7 @@ const AddUser = () => {
    const [addsuccess,setAddsuccess] = useState(false)
  
    const onSubmit = (formData) =>{
-      fetch(`http://localhost:8000/api/v1/admin/addUser`,{
+      fetch(`https://start-hotel-practice-project.onrender.com/api/v1/admin/addUser`,{
          method:'POST',
          headers:{
             'content-type':'application/json'

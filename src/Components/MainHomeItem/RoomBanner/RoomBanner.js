@@ -9,47 +9,6 @@ import { useEffect } from 'react';
 
 
 
-
-const sliderSwipe = [
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=3"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=4"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=5"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=6"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=8"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=9"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=0"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=1"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=33"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=66"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=39"
-  },
-  {
-    imgUrl: "https://placeimg.com/800/600/nature?random=39"
-  },
-
-]
-
 const settings = {
   dots: true,
   infinite: true,
@@ -94,7 +53,7 @@ const RoomBanner = () => {
   const [bannerRoom, setBannerRoom] = useState([])
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/v1/room/bannerRoom`)
+    fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/bannerRoom`)
       .then(res => res.json())
       .then(data => setBannerRoom(data.data))
   }, [])

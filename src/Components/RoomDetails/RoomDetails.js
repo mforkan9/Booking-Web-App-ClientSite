@@ -61,7 +61,7 @@ const RoomDetails = () => {
     const [loader, setloader] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/room/roomFindById/${id}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/roomFindById/${id}`)
             .then(res => res.json())
             .then(data => {
                 setRoomData(data?.value)

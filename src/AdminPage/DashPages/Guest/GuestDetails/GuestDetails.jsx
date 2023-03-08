@@ -17,7 +17,7 @@ const GuestDetails =  () => {
     
     
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/client/clientFindByEmail/${email}?page=${active}&limit=${5}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/client/clientFindByEmail/${email}?page=${active}&limit=${5}`)
         .then(res => res.json())
         .then(data =>{
             setGuestData(data.data)
@@ -37,7 +37,7 @@ const GuestDetails =  () => {
      
     const handleFindBookingById = (id) =>{
 
-        fetch(`http://localhost:8000/api/v1/booking/bookingFindById/${id}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/bookingFindById/${id}`)
          .then(res => res.json())
         .then(data => setBookData(data.data))
     }

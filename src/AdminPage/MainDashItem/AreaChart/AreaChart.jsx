@@ -38,7 +38,7 @@ const AreaChart = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/booking/bookingFindByMonth`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/bookingFindByMonth`)
             .then(res => res.json())
             .then(data => setOrderList(data.data))
     }, [])

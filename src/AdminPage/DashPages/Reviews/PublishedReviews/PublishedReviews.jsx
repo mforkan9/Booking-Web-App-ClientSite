@@ -13,7 +13,7 @@ const PublishedReviews = () => {
     const [dataLimit, setDataLimit] = useState(4)
     const [updateSuccess, setUpdateSuccess] = useState(false)
 
-    const url = (`http://localhost:8000/api/v1/review/getReviewsByStatus?status=published`)
+    const url = (`https://start-hotel-practice-project.onrender.com/api/v1/review/getReviewsByStatus?status=published`)
 
     const { data, isPending } = useFetch(url)
 

@@ -53,9 +53,9 @@ const Navbar = () => {
               <li class="nav-item">
                 <NavLink className={({ isActive }) => isActive ? 'activeClassName' : undefined} to={'/features'}><a class="" href="#">Features</a></NavLink>
               </li>
-              <li class="nav-item">
+              {/* <li class="nav-item">
               <NavLink className={({ isActive }) => isActive ? 'activeClassName' : undefined} to={'/adminlogin'}><a class="" href="#">About</a></NavLink>
-              </li>
+              </li> */}
               <li class="nav-item">
                 <Link to={'/adminDashboard'}><a class="" href='#'>ADMIN</a></Link>
               </li>

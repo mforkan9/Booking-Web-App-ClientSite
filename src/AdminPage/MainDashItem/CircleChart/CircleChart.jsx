@@ -6,7 +6,7 @@ const CircleChart = () => {
     const [seriesValue,setSeriesValue] = useState(0)
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/room/createRoom`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/createRoom`)
         .then(res => res.json())
         .then(data => {
             console.log(data)

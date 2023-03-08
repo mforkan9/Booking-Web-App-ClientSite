@@ -28,7 +28,7 @@ const Reservation = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/room/roomFindById/${id}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/room/roomFindById/${id}`)
             .then(res => res.json())
             .then(data => setRoomDetailsData(data.value))
     }, [id])
@@ -60,7 +60,7 @@ const Reservation = () => {
         const bookdata = { ...formData,checkIn,checkOut, bookedFor: [id],roomTotalPrice,days}
 
         setSpinner(true)
-        fetch(`http://localhost:8000/api/v1/booking/createBooking`, {
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/createBooking`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

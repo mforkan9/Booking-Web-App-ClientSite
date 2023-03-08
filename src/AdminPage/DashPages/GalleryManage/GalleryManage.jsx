@@ -10,7 +10,7 @@ import img1 from './image-gallery.png'
 
 const publicKey = 'public_ZFrfBtvKxNspT+HqDIHl6KLQLJg=';
 const urlEndpoint = 'https://ik.imagekit.io/qn3a4n63b';
-const authenticationEndpoint = 'http://localhost:8000/api/v1/hotelGallery/imagekitAuth';
+const authenticationEndpoint = 'https://start-hotel-practice-project.onrender.com/api/v1/hotelGallery/imagekitAuth';
 
 const GalleryManage = () => {
     const [loader, setloader] = useState(false)
@@ -20,7 +20,7 @@ const GalleryManage = () => {
     const [deleteSuccess, setDeletedSuccess] = useState(false)
 
 
-    const { data, isPending } = useFetch(`http://localhost:8000/api/v1/hotelGallery/getAllImage`, uploadedSuccess, deleteSuccess)
+    const { data, isPending } = useFetch(`https://start-hotel-practice-project.onrender.com/api/v1/hotelGallery/getAllImage`, uploadedSuccess, deleteSuccess)
 
     useEffect(() => {
         if (data?.status === 'success') {
@@ -40,7 +40,7 @@ const GalleryManage = () => {
         console.log(photoUrl.length);
         setloader(true)
         if (photoUrl.length > 0) {
-          await disPatchReq(`http://localhost:8000/api/v1/hotelGallery/uploadImage`,'POST',{photoUrl:photoUrl})
+          await disPatchReq(`https://start-hotel-practice-project.onrender.com/api/v1/hotelGallery/uploadImage`,'POST',{photoUrl:photoUrl})
         }
     }
 
@@ -56,7 +56,7 @@ const GalleryManage = () => {
 
     
     const handleDelete = async(id) => {
-        await disPatchReq(`http://localhost:8000/api/v1/hotelGallery/deleteGalleryImage/${id}`, 'DELETE')
+        await disPatchReq(`https://start-hotel-practice-project.onrender.com/api/v1/hotelGallery/deleteGalleryImage/${id}`, 'DELETE')
        }
    
        useEffect(() => {
@@ -77,7 +77,7 @@ const GalleryManage = () => {
     //     //upload in database
     //     const photoUrl = res.url
     //     setloader(true)
-    //     const response = await fetch(`http://localhost:8000/api/v1/hotelGallery/uploadImage`, {
+    //     const response = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/hotelGallery/uploadImage`, {
     //         method: 'POST',
     //         headers: {
     //             'content-type': 'application/json'
@@ -97,7 +97,7 @@ const GalleryManage = () => {
 
 
     // const handleDelete = async (id) => {
-    //     const response = await fetch(`http://localhost:8000/api/v1/hotelGallery/deleteGalleryImage/${id}`, {
+    //     const response = await fetch(`https://start-hotel-practice-project.onrender.com/api/v1/hotelGallery/deleteGalleryImage/${id}`, {
     //         method: 'DELETE',
     //     })
     //     if (response.ok) {

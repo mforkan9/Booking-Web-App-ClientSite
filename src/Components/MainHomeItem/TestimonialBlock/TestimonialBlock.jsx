@@ -7,7 +7,7 @@ import img1 from './user.png'
 
 const TestimonialBlock = () => {
     const [testimonial, setTestimonial] = useState([])
-    // const url = (`http://localhost:8000/api/v1/review/getReviewsByStatus?status=published`)
+    // const url = (`https://start-hotel-practice-project.onrender.com/api/v1/review/getReviewsByStatus?status=published`)
     // const { data, isPending } = useFetch(url)
 
     // useEffect(() => {
@@ -17,7 +17,7 @@ const TestimonialBlock = () => {
     // })
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/review/getReviewsByStatus?status=published`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/review/getReviewsByStatus?status=published`)
           .then(res => res.json())
           .then(data => setTestimonial(data?.data))
       }, [])

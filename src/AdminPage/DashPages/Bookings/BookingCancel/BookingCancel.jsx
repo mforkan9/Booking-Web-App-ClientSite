@@ -13,7 +13,7 @@ const BookingCancel = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v1/booking/statusBooking?status=canceled&page=${activePage}&limit=${limit}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/statusBooking?status=canceled&page=${activePage}&limit=${limit}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -32,7 +32,7 @@ const BookingCancel = () => {
 
     const handleFindById = (id) => {
 
-        fetch(`http://localhost:8000/api/v1/booking/bookingFindById/${id}`)
+        fetch(`https://start-hotel-practice-project.onrender.com/api/v1/booking/bookingFindById/${id}`)
             .then(res => res.json())
             .then(data => setBookingDetails(data?.data))
     }
